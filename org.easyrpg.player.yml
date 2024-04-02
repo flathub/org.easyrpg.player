@@ -34,7 +34,7 @@ modules:
         commit: a33701196adfad74917046096bf5a2aa0ab0bb50
         x-checker-data:
           type: git
-          tag-pattern: '^([\\d.]+)$'
+          tag-pattern: ^([\d.]+)$
           versions:
             '<': '10.0.0'
   - name: libxmp
@@ -51,7 +51,7 @@ modules:
         commit: 8201d26cf933688a8be64292457c429fd8e654ab
         x-checker-data:
           type: git
-          tag-pattern: '^libxmp-([\\d.]+)$'
+          tag-pattern: ^libxmp-([\d.]+)$
   # own libraries
   - name: liblcf
     buildsystem: cmake-ninja
@@ -69,7 +69,7 @@ modules:
         x-checker-data:
           is-main-source: true
           type: git
-          tag-pattern: '^([\\d.]+)$'
+          tag-pattern: ^([\d.]+)$
     cleanup:
       - /share
   - name: player
@@ -85,7 +85,7 @@ modules:
         x-checker-data:
           is-main-source: true
           type: git
-          tag-pattern: '^([\\d.]+)$'
+          tag-pattern: ^([\d.]+)$
     cleanup:
       - /share/bash-completion
       - /share/pixmaps
