@@ -1,0 +1,97 @@
+From 73c0023d447b92971dfccadc00bedc0430e76876 Mon Sep 17 00:00:00 2001
+From: Carsten Teibes <dev@f4ke.de>
+Date: Wed, 27 Mar 2024 23:26:15 +0100
+Subject: [PATCH 1/4] Resolve flathub linter warnings
+
+---
+ resources/unix/easyrpg-player.metainfo.xml | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/resources/unix/easyrpg-player.metainfo.xml b/resources/unix/easyrpg-player.metainfo.xml
+index a90f184c25..cb5bc4f055 100644
+--- a/resources/unix/easyrpg-player.metainfo.xml
++++ b/resources/unix/easyrpg-player.metainfo.xml
+@@ -2,7 +2,7 @@
+ <component type="desktop-application">
+ 	<id>org.easyrpg.player</id>
+ 	<name>EasyRPG Player</name>
+-	<summary>Play your RPG Maker games everywhere</summary>
++	<summary>RPG Maker 2000/2003 interpreter</summary>
+ 	<developer_name>EasyRPG Team</developer_name>
+ 	<update_contact>easyrpg_AT_easyrpg.org</update_contact>
+ 
+@@ -52,12 +52,15 @@
+ 	<screenshots>
+ 		<screenshot type="default">
+ 			<image>https://easyrpg.org/images/player/testgame.png</image>
++			<caption>Our TestGame</caption>
+ 		</screenshot>
+ 		<screenshot>
+ 			<image>https://easyrpg.org/images/player/name_input.png</image>
++			<caption>Name Input Scene</caption>
+ 		</screenshot>
+ 		<screenshot>
+ 			<image>https://easyrpg.org/images/player/yume_nikki.png</image>
++			<caption>Yume Nikki freeware game</caption>
+ 		</screenshot>
+ 	</screenshots>
+ 
+
+From 631f8eb99012f2421ac45d35da04aaed8bdb7793 Mon Sep 17 00:00:00 2001
+From: Carsten Teibes <dev@f4ke.de>
+Date: Wed, 27 Mar 2024 23:33:44 +0100
+Subject: [PATCH 2/4] Add former unsupported URL types
+
+---
+ resources/unix/easyrpg-player.metainfo.xml | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/resources/unix/easyrpg-player.metainfo.xml b/resources/unix/easyrpg-player.metainfo.xml
+index cb5bc4f055..0e851040ea 100644
+--- a/resources/unix/easyrpg-player.metainfo.xml
++++ b/resources/unix/easyrpg-player.metainfo.xml
+@@ -43,10 +43,8 @@
+ 	<url type="contact">https://easyrpg.org/contact</url>
+ 	<url type="bugtracker">https://github.com/EasyRPG/Player/issues</url>
+ 	<url type="translate">https://translate.easyrpg.org</url>
+-	<!-- these tags are reported as invalid currently, old appstream-util: https://github.com/ximion/appstream/blob/v0.15.4/NEWS#L31
+-		<url type="contribute">https://easyrpg.org/contribute</url>
+-		<url type="vcs-browser">https://github.com/EasyRPG/Player</url>
+-	-->
++	<url type="contribute">https://easyrpg.org/contribute</url>
++	<url type="vcs-browser">https://github.com/EasyRPG/Player</url>
+ 
+ 	<launchable type="desktop-id">easyrpg-player.desktop</launchable>
+ 	<screenshots>
+
+
+From 54cbb336610169aadcc1cc8159d12cc9af4fea81 Mon Sep 17 00:00:00 2001
+From: Carsten Teibes <dev@f4ke.de>
+Date: Tue, 2 Apr 2024 01:36:15 +0200
+Subject: [PATCH 4/4] metainfo: add 0.8 release
+
+---
+ resources/unix/easyrpg-player.metainfo.xml | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/resources/unix/easyrpg-player.metainfo.xml b/resources/unix/easyrpg-player.metainfo.xml
+index 0e851040ea..b65225d452 100644
+--- a/resources/unix/easyrpg-player.metainfo.xml
++++ b/resources/unix/easyrpg-player.metainfo.xml
+@@ -67,6 +67,16 @@
+ 	</content_rating>
+ 
+ 	<releases>
++		<release version="0.8" date="2023-04-29">
++			<description>
++				<p>
++					"Paralyze"
++				</p>
++				<p>
++					https://blog.easyrpg.org/2023/04/easyrpg-player-0-8-paralyze/
++				</p>
++			</description>
++		</release>
+ 		<release version="0.7.0" date="2021-10-29" />
+ 		<release version="0.6.2.3" date="2020-10-03" />
+ 		<release version="0.6.2.2" date="2020-09-08" />

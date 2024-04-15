@@ -91,6 +91,8 @@ modules:
           is-main-source: true
           type: git
           tag-pattern: ^([\d.]+)$
+      - type: patch
+        path: update-metainfo-pr3199.patch
     cleanup:
       - /share/bash-completion
       - /share/pixmaps
