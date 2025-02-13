@@ -35,13 +35,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/fmtlib/fmt.git
-        tag: '9.1.0'
+        tag: 9.1.0
         commit: a33701196adfad74917046096bf5a2aa0ab0bb50
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
           versions:
-            '<': '10.0.0'
+            <: 10.0.0
   - name: libxmp
     buildsystem: cmake-ninja
     config-opts:
@@ -52,8 +52,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libxmp/libxmp.git
-        tag: libxmp-4.6.0
-        commit: 8201d26cf933688a8be64292457c429fd8e654ab
+        tag: libxmp-4.6.1
+        commit: d1c751463a5646f1a8092e432b13377a264d132f
         x-checker-data:
           type: git
           tag-pattern: ^libxmp-([\d.]+)$
