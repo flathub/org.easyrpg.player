@@ -52,8 +52,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libxmp/libxmp.git
-        tag: libxmp-4.6.1
-        commit: d1c751463a5646f1a8092e432b13377a264d132f
+        tag: libxmp-4.6.2
+        commit: 828ef357943e1fbb13910e7a6fca21987c5c5827
         x-checker-data:
           type: git
           tag-pattern: ^libxmp-([\d.]+)$
