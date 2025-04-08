@@ -1,6 +1,6 @@
 app-id: org.easyrpg.player
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: easyrpg-player
 rename-desktop-file: easyrpg-player.desktop
@@ -35,13 +35,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/fmtlib/fmt.git
-        tag: 9.1.0
-        commit: a33701196adfad74917046096bf5a2aa0ab0bb50
+        tag: 11.1.4
+        commit: 123913715afeb8a437e6388b4473fcc4753e1c9a
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
-          versions:
-            <: 10.0.0
   - name: libxmp
     buildsystem: cmake-ninja
     config-opts:
@@ -57,9 +55,56 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^libxmp-([\d.]+)$
+  - name: inih
+    buildsystem: meson
+    config-opts:
+      - --buildtype=debugoptimized
+      - -Ddefault_library=shared
+      - -Ddistro_install=true
+      - -Dwith_INIReader=false
+    sources:
+      - type: git
+        url: https://github.com/benhoyt/inih.git
+        tag: r60
+        commit: 9de2a5fe4956447a22a324e2efc0648c5aad5285
+        x-checker-data:
+          type: git
+          tag-pattern: ^r([\d]+)$
+  - name: nlohmann_json
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DJSON_BuildTests=OFF
+    sources:
+      - type: git
+        url: https://github.com/nlohmann/json.git
+        tag: v3.11.3
+        commit: 9cca280a4d0ccf0c08f47a99aa71d1b0e52f8d03
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+    cleanup:
+      - /share
+  - name: lhasa
+    config-opts:
+      - --enable-shared
+      - --disable-static
+    sources:
+      - type: git
+        url: https://github.com/fragglet/lhasa.git
+        tag: v0.4.0
+        commit: 3b8f502c1480c5d9f2927e95d7e0f022b9cdd0a1
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+    cleanup:
+      - /bin
+      - /share/man
+      - /lib/*.la
   # own libraries
   - name: liblcf
     buildsystem: cmake-ninja
+    builddir: true
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DLIBLCF_ENABLE_TOOLS=OFF
@@ -69,8 +114,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/EasyRPG/liblcf.git
-        tag: '0.8'
-        commit: 9c09529e3de0a4106470082ef48a00d4c3593c33
+        tag: 0.8.1
+        commit: 92c4450a1bc1acb58bd02bbb99b57e5036919cdf
         x-checker-data:
           is-main-source: true
           type: git
@@ -79,20 +124,19 @@ modules:
       - /share
   - name: player
     buildsystem: cmake-ninja
+    builddir: true
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DPLAYER_VERSION_APPEND='(Flathub)'
     sources:
       - type: git
         url: https://github.com/EasyRPG/Player.git
-        tag: '0.8'
-        commit: f8e41f43b619413f95847536412b56f85307d378
+        tag: 0.8.1
+        commit: 2b909be57339d2c48626ea332fec545571f0199f
         x-checker-data:
           is-main-source: true
           type: git
           tag-pattern: ^([\d.]+)$
-      - type: patch
-        path: update-metainfo-pr3199.patch
     cleanup:
       - /share/bash-completion
       - /share/pixmaps
