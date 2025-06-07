@@ -137,8 +137,6 @@ modules:
           is-main-source: true
           type: git
           tag-pattern: ^([\d.]+)$
-      - type: patch
-        path: add-0.8.1-release-to-metainfo-pr3390.patch
     cleanup:
       - /share/bash-completion
       - /share/pixmaps
