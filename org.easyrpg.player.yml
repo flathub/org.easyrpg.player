@@ -131,14 +131,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/EasyRPG/Player.git
-        tag: 0.8.1
-        commit: 2b909be57339d2c48626ea332fec545571f0199f
+        tag: 0.8.1.1
+        commit: 78328fa29f465315291e161130e6682f69410370
         x-checker-data:
           is-main-source: true
           type: git
           tag-pattern: ^([\d.]+)$
-      - type: patch
-        path: add-0.8.1-release-to-metainfo-pr3390.patch
     cleanup:
       - /share/bash-completion
       - /share/pixmaps
