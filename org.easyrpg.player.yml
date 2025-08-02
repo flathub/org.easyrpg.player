@@ -92,8 +92,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/fragglet/lhasa.git
-        tag: v0.4.0
-        commit: 3b8f502c1480c5d9f2927e95d7e0f022b9cdd0a1
+        tag: v0.5.0
+        commit: 450172de282c8f8730696f4370a57cf49bfabf22
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
