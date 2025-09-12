@@ -65,8 +65,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/benhoyt/inih.git
-        tag: r61
-        commit: 3eda303b34610adc0554bdea08d02a25668c774c
+        tag: r62
+        commit: 26254ee9de7681f8825433415443e7116ff24b98
         x-checker-data:
           type: git
           tag-pattern: ^r([\d]+)$
